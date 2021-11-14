@@ -1,0 +1,26 @@
+header{
+    background-color: #C68B59;
+    
+
+    
+}
+.branding span{
+    
+    font-family: 'TungstenCondensed-Semibold';
+    text-align: center;
+    
+   
+}
+
+    
+
+.header-nav{
+    font-family: 'TungstenCondensed-Semibold';
+    text-align: center;
+    
+    font-size: 20px;
+}
+a {
+    color: #3c3c38;
+}
+

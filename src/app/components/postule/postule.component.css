@@ -1,0 +1,27 @@
+button {
+    
+        margin: 0;
+        position: relative;
+        left: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      
+}
+.tree {
+        border-right: 0.01rem solid;
+        margin-left: 5px;
+}
+h4 {
+        margin-left: 5px;
+}
+
+
+clr-vertical-nav {
+       
+        height: 900px;
+        
+}
+
+span{
+        color: white;
+    }
