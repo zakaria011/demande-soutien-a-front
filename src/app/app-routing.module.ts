@@ -3,22 +3,28 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DonneesPersonnellesComponent } from './components/donnees-personnelles/donnees-personnelles.component';
 import { PostuleComponent } from './components/postule/postule.component';
-import { AboutComponent } from './components/about/about.component';
 
 import { DonneesProfesionnellesComponent } from './components/donnees-profesionnelles/donnees-profesionnelles.component';
 import { MissionStageCaseCadreComponent } from './components/mission-stage-case-cadre/mission-stage-case-cadre.component';
 import { MissionStageInfoGeneralesComponent } from './components/mission-stage-info-generales/mission-stage-info-generales.component';
 import { MsInfoGeneralesComponent } from './components/ms-info-generales/ms-info-generales.component';
 import { SoutienComponent } from './components/soutien/soutien.component';
+import { HomeComponent } from './components/home/home.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 
-const ROUTES : Routes = [ 
-  {path : 'about', component : AboutComponent},
+const ROUTES : Routes = [
+  {path : 'home', component : HomeComponent},
+  {path : 'contact', component : ContactComponent},
+  {path : 'signup', component : SignupComponent},
+  {path : 'signin', component : SigninComponent},
   {path : 'postule', component : PostuleComponent,
   children : [
   {path : 'donneeperso', component : DonneesPersonnellesComponent, outlet: 'forms'},
-  
- 
+
+
   {path : 'donneepro', component : DonneesProfesionnellesComponent ,outlet: 'forms'},
   {path : 'mission-cadre', component : MissionStageCaseCadreComponent ,outlet: 'forms'},
   {path : 'mission-info', component : MissionStageInfoGeneralesComponent ,outlet: 'forms'},
@@ -40,5 +46,4 @@ const ROUTES : Routes = [
 })
 export class AppRoutingModule { }
 
-  
-  
+

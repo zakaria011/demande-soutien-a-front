@@ -1,156 +1,64 @@
 
-   
-    <!--<div class="content-container">
-        
-                
-                <br>
-                <div class="tree"><h4>Formulaire à remplire</h4>
-                    <clr-tree>
-                        <clr-tree-node>
-                            <b>Information du demandeur</b>
-                            <ng-template [clrIfExpanded]="true">
-                                <clr-tree-node>
-                                    <a
-                                        routerLink= "/donneeperso"
-                                        class="clr-treenode-link"
-                                        routerLinkActive="active">Données personnelles</a>
-                                </clr-tree-node>
-                        
-                                <clr-tree-node>
-                                    <a
-                                        
-                                        class="clr-treenode-link"
-                                        routerLinkActive="active">Données profesionnelles</a>
-                                </clr-tree-node>
-                            </ng-template>
-                        </clr-tree-node>
-                        <clr-tree-node>
-                            <b>Cas d'une mission ou stage</b>
-                        <ng-template [clrIfExpanded]="true">
-                            <clr-tree-node>
-                                <a
-                                
-                                    class="clr-treenode-link"
-                                    routerLinkActive="active">Cadre</a>
-                            </clr-tree-node>
-                    
-                            <clr-tree-node>
-                                <a
-                                    
-                                    class="clr-treenode-link"
-                                    routerLinkActive="active">Information générale </a>
-                            </clr-tree-node>
-                    
-                            <clr-tree-node>
-                                <a
-                                    
-                                    class="clr-treenode-link"
-                                    routerLinkActive="active">Information sur le soutien</a>
-                            </clr-tree-node>
-                        </ng-template>
-                        </clr-tree-node>
-                        <clr-tree-node>
-                            <b>Cas d'une manifestation scientifique</b>
-                    <ng-template [clrIfExpanded]="true">
-                        <clr-tree-node>
-                            <a
-                                
-                                class="clr-treenode-link"
-                                routerLinkActive="active">Informations générales</a>
-                        </clr-tree-node>
-                
-                        <clr-tree-node>
-                            <a
-                                
-                                class="clr-treenode-link"
-                                routerLinkActive="active">Information sur le soutien</a>
-                        </clr-tree-node>
-                    </ng-template>
-                    </clr-tree-node>
-                    </clr-tree>
-                </div>
-                  
-                          
-            
-    </div> 
-    <div class="content-container">
-      <clr-main-container>
-        <clr-header>
-          ...
-          <div class="header-nav" [clr-nav-level]="1">
-            ...
-          </div>
-          ...
-        </clr-header>
-        <div class="content-container">
-          <main class="content-area">
-            ...ndnsndn
-          </main>
-          <nav class="sidenav" [clr-nav-level]="2">
-            ...
-          </nav>
+      <header id="head" class="secondary"></header>
+
+      <!-- container -->
+      <div class="container">
+
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="active">Left Sidebar</li>
+        </ol>
+
+        <div class="row">
+
+          <!-- Sidebar -->
+          <aside class="col-md-4 sidebar sidebar-left">
+
+            <nav id="sidebar">
+              <div class="sidebar-header">
+                <h3>Navigation du formulaires</h3>
+
+              </div>
+
+              <ul class="list-unstyled components">
+
+                <li class="">
+                  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Informations sur le demandeurs</a>
+                  <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['donneeperso'] } }]">Données personnelles</a></li>
+                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['donneepro'] } }]">Données profesionnelles</a></li>
+                  </ul>
+                </li>
+                <li>
+
+                  <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Informations sur le stage ou la mission</a>
+                  <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['mission-info'] } }]">Informations générale</a></li>
+                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['mission-cadre'] } }]">cadre</a></li>
+                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['soutien'] } }]">Soutien</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+
+              <ul class="list-unstyled CTAs">
+                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to the article</a></li>
+              </ul>
+            </nav>
+
+          </aside>
+          <!-- /Sidebar -->
+
+          <!-- Article main content -->
+          <article class="col-md-8 maincontent" style="background-color: #f8f9fa ;">
+            <header class="page-header">
+              <h1 class="page-title">Lorem ipsum dolor sit amet, consectetur.</h1>
+            </header>
+
+            <router-outlet name="forms"></router-outlet>
+
+          </article>
+          <!-- /Article -->
+
         </div>
-      </clr-main-container> -->
-  <div class="content-container">
-    <clr-vertical-nav >
-        <clr-vertical-nav-group routerLinkActive="active">
-          <cds-icon shape="user" clrVerticalNavIcon></cds-icon>
-          Information du demandeur
-          <clr-vertical-nav-group-children>
-            <a clrVerticalNavLink [routerLink]="['/postule' , { outlets: { forms: ['donneeperso'] } }]" routerLinkActive="active">
-                Données personnelles
-            </a>
-            <a clrVerticalNavLink [routerLink]="['/postule' , { outlets: { forms: ['donneepro'] } }]" routerLinkActive="active">
-              Données profesionnelles
-            </a>
-          </clr-vertical-nav-group-children>
-        </clr-vertical-nav-group>
-        <clr-vertical-nav-group routerLinkActive="active">
-          <cds-icon shape="flame" clrVerticalNavIcon></cds-icon>
-          Cas d'une mission ou stage
-          <clr-vertical-nav-group-children>
-            <a clrVerticalNavLink  [routerLink]="['/postule' , { outlets: { forms: ['mission-info'] } }]" routerLinkActive="active">
-                Information générales      
-            </a>
-            <a clrVerticalNavLink [routerLink]="['/postule' , { outlets: { forms: ['mission-cadre'] } }]" routerLinkActive="active">
-                Cadre      
-            </a>
-            <a clrVerticalNavLink [routerLink]="['/postule' , { outlets: { forms: ['soutien'] } }]" routerLinkActive="active">
-              Soutien
-            </a>
-          </clr-vertical-nav-group-children>
-        </clr-vertical-nav-group>
-        <clr-vertical-nav-group routerLinkActive="active">
-          <cds-icon shape="bolt" clrVerticalNavIcon></cds-icon>
-          Cas d'une manifestation scientifique
-          <clr-vertical-nav-group-children>
-            <a clrVerticalNavLink  [routerLink]="['/postule' , { outlets: { forms: ['manifestation-info'] } }]" routerLinkActive="active">
-                Informations générales
-            </a>
-            <a clrVerticalNavLink  [routerLink]="['/postule' , { outlets: { forms: ['soutien'] } }]" routerLinkActive="active">
-              Soutien
-            </a>
-          </clr-vertical-nav-group-children>
-        </clr-vertical-nav-group>
-        
-    </clr-vertical-nav>
-  
-    <!--<div class="content-container">
-        <clr-vertical-nav>
-          <a clrVerticalNavLink routerLink ="/donneeperso" routerLinkActive="active">Charmander</a>
-          <a clrVerticalNavLink routerLink="/missionstage" routerLinkActive="active">Jigglypuff</a>
-         
-          <div class="nav-divider"></div>
-          
-        </clr-vertical-nav> -->
-        <div class="content-area">
-          <router-outlet name="forms"></router-outlet>
-        </div>
-
-      </div>
-     
-
-    
-
-
-
+      </div>	<!-- /container -->

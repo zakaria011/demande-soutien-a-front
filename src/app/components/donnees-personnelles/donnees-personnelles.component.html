@@ -1,54 +1,50 @@
+<form>
 
 
-<div class="content-area">
-     
-    <h3>Données personnelles</h3>
-    <form clrForm clrLayout="horizontal" clrLabelSize="4">
-        <div class="clr-row">
-            <div class="clr-col-6">
-                <clr-input-container>
-                    <label>Nom</label>
-                    <input clrInput type="text" name="firstName" required />
-                    <clr-control-error>We need your first name for legal compliance</clr-control-error>
-                </clr-input-container>
-            </div>
-            <div class="clr-col-6">
-                <clr-input-container>
-                    <label>Prénom</label>
-                    <input clrInput type="text" name="firstName" required />
-                    <clr-control-error>We need your first name for legal compliance</clr-control-error>
-                </clr-input-container>
-            </div>
-        </div>
-        <div class="clr-row">
-            <div class="clr-col-6">
-                <clr-input-container>
-                <label>Num Tel :</label>
-                <input clrInput type="text" name="firstName" required />
-                <clr-control-error>We need your first name for legal compliance</clr-control-error>
-                </clr-input-container>
-            </div>
-            <div class="clr-col-6">
-                <clr-input-container>
-                    <label>Email :</label>
-                    <input clrInput type="text" name="firstName" required />
-                    <clr-control-error>We need your first name for legal compliance</clr-control-error>
-                </clr-input-container>
-            </div>
-        </div>
-        <clr-radio-container clrInline>
-            <label>Fonction au sein de l'établissement</label>
-            <clr-radio-wrapper>
-              <input type="radio" clrRadio name="options" required value="option1"  />
-              <label>Enseignant chercheur</label>
-            </clr-radio-wrapper>
-            <clr-radio-wrapper>
-              <input type="radio" clrRadio name="options" required value="option2" />
-              <label>Doctorant</label>
-            </clr-radio-wrapper>
-        </clr-radio-container>          
-    </form> 
-</div>
+  <div class="row top-margin">
+    <div class="col-sm-6">
+      <label>Nom <span class="text-danger">*</span></label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-sm-6">
+      <label>Prénom <span class="text-danger">*</span></label>
+      <input type="text" class="form-control">
+    </div>
+  </div>
 
-  
-  
+  <div class="row top-margin">
+    <div class="col-sm-6">
+      <label>Num tel <span class="text-danger">*</span></label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-sm-6">
+      <label>Email <span class="text-danger">*</span></label>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="top-margin">
+    <div class="col-sm-12">
+      <label>Fonction au sein de l'établissement : </label>
+      <span class="radio-inline">
+        <input type="radio" name="optradio" checked>Enseigant chercheur
+      </span>
+      <span class="radio-inline">
+        <input type="radio" name="optradio">Doctorant
+      </span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <label class="checkbox">
+        <input type="checkbox">
+        I've read the <a href="page_terms.html">Terms and Conditions</a>
+      </label>
+    </div>
+    <div class="col-lg-4 text-right">
+      <button class="btn btn-action" type="submit">Register</button>
+    </div>
+  </div>
+</form>
