@@ -23,6 +23,7 @@ const ROUTES : Routes = [
   {path : 'postule', component : PostuleComponent,
   children : [
   {path : 'donneeperso', component : DonneesPersonnellesComponent, outlet: 'forms'},
+  
 
 
   {path : 'donneepro', component : DonneesProfesionnellesComponent ,outlet: 'forms'},

@@ -37,7 +37,8 @@ import { SigninComponent } from './components/signin/signin.component';
     FooterComponent,
     ContactComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    
   ],
   imports: [
     BrowserModule,
