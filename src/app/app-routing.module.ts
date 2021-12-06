@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { ChoosePostuleComponent } from './components/choose-postule/choose-postule.component';
 
 
 const ROUTES : Routes = [
@@ -20,10 +21,11 @@ const ROUTES : Routes = [
   {path : 'contact', component : ContactComponent},
   {path : 'signup', component : SignupComponent},
   {path : 'signin', component : SigninComponent},
-  {path : 'postule', component : PostuleComponent,
+  {path : 'choosepostule', component : ChoosePostuleComponent},
+  {path : 'postule/:type', component : PostuleComponent,
   children : [
   {path : 'donneeperso', component : DonneesPersonnellesComponent, outlet: 'forms'},
-  
+
 
 
   {path : 'donneepro', component : DonneesProfesionnellesComponent ,outlet: 'forms'},

@@ -1,55 +1,77 @@
-<form>
-
-    <div class="row top-margin">
-    
-        <div class="col-sm-6">
-        <input type="radio" class="radio-inline" >
-        <label style="margin-left: 5px;"> Ce projet de coopération financé, mais le titre de transport ne fait pas partie de l'enveloppe budgétaire allouée</label>
-        <input type="radio" class="radio-inline" style="margin-left: 10px;">
-        <label style="margin-left: 10px;">Non</label>
-        </div>
-    </div>
-
+<form [formGroup]="manifestationForm">
+  <div formGroupName="manifestationInfosForm">
     <div class="row top-margin">
       <div class="col-sm-6">
-        <label>Préciser le montant <span class="text-danger">*</span></label>
-        <input type="text" class="form-control">
+        <label>Intitulé de la manifestation<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" formControlName="intituleManifestation">
       </div>
     </div>
-    
     <div class="row top-margin">
-        <div class="col-sm-6">
-            
-          <label>Nature de soutien demandé </label> </div>
-          <div class="col-sm-6">
-          <input type="radio" class="radio-inline" >
-          <label style="margin-left: 10px;"> Soutien Total </label>
-          <input type="radio" class="radio-inline" style="margin-left: 10px;">
-          <label style="margin-left: 10px;"> Soutien Complémentaire </label>
-          </div>
-        
+      <div class="col-sm-6">
+        <label>Intitulé de la participation<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" formControlName="intituleParticipation">
       </div>
-      <div class="row top-margin">
-        <div class="col-sm-6">
-          <label>Montant Titre Transport <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+    </div>
+    <div class="row top-margin">
+      <div class="col-sm-6">
+        <label>Pays <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" formControlName="pays">
+      </div>
+      <div class="col-sm-6">
+          <label>Ville<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" formControlName="ville">
+        </div>
+    </div>
+    <div class="row top-margin">
+       <div class="col-sm-6">
+
+          <label>Date début<span class="text-danger">*</span></label>
+          <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
+              formControlName="dateDebut"
+          >
         </div>
         <div class="col-sm-6">
-            <label>Montant Frais D'inscription <span class="text-danger">*</span></label>
-            <input type="text" class="form-control">
-          </div>
-      </div>
-      <div class="row top-margin">
-        <div class="col-sm-6">
-          <label>Montant Hébergement <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+        <label>Date Fin<span class="text-danger">*</span></label>
+        <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
+          formControlName="dateFin"
+        >
         </div>
-        <div class="col-sm-6">
-            <label>Autre<span class="text-danger">*</span></label>
-            <input type="text" class="form-control">
-          </div>
+  </div>
+  <div class="row top-margin">
+      <div class="col-sm-6">
+
+        <label>Date depart<span class="text-danger">*</span></label>
+        <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
+            formControlName="dateDepart"
+        >
       </div>
-    
- 
- 
+      <div class="col-sm-6">
+      <label>Date retour<span class="text-danger">*</span></label>
+      <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
+            formControlName="dateRetour"
+      >
+      </div>
+  </div>
+  <div class="row top-margin">
+    <div class="col-sm-6">
+      <label>Nature de la participation </label>
+      <select class="form-control" formControlName="natureParticipation">
+        <option>Choisir un etablissement</option>
+        <option value="conference">Conférence</option>
+        <option value="communucation orale">Communucation orale</option>
+        <option value="communucation affichee">Communucation affichée</option>
+        <option value="autre">Autre</option>
+      </select>
+    </div>
+
+  <div class="col-lg-4 text-right">
+    <button class="btn btn-action" type="submit" (click)= "handleFinish()">Valider</button>
+  </div>
+
+
+</div>
+</div>
+
+
+
 </form>

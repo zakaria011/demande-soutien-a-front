@@ -1,0 +1,70 @@
+<form [formGroup]= "demandeurProForm">
+  <div formGroupName = "demandeurProInfos">
+
+
+      <div class="top-margin" >
+          <div class="col-sm-6">
+            <label>Grade : </label>
+            <span class="radio">
+              <input type="radio" value="PES" formControlName="grade" name="optradio2" checked>PES
+            </span>
+            <span class="radio">
+              <input type="radio" value="PH" formControlName="grade" name="optradio2">PH
+            </span>
+            <span class="radio">
+              <input type="radio" value="PA" formControlName="grade" name="optradio2">PA
+            </span>
+            <span class="radio">
+              <input type="radio"  value="Autre" formControlName="grade" name="optradio2">Autre
+            </span>
+          </div>
+      </div>
+
+
+
+
+
+
+
+        <div class="row top-margin">
+          <div class="col-sm-6">
+            <label>CED <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="ced">
+          </div>
+        </div>
+        <div class="row top-margin">
+          <div class="col-sm-6">
+            <label>Etablissement </label>
+            <select class="form-control" formControlName="etablissement">
+              <option>Choisir un etablissement</option>
+              <option value="FSTS">FSTG</option>
+              <option value="FSSM">FSSM</option>
+              <option value="FMPM">FMPM</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="row top-margin">
+          <div class="col-sm-6">
+            <label>Entite de Recherche<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="entiteDeRecherche">
+          </div>
+      </div>
+      <div class="row top-margin">
+          <div class="col-sm-6">
+            <label>Responsable de l'entite de recherche<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" formControlName="responsableEntite">
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 text-right">
+            <button class="btn btn-action" type="submit" (click)= "handleFinish()">Sign in</button>
+          </div>
+        </div>
+
+  </div>
+
+
+    </form>

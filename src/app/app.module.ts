@@ -20,6 +20,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DonneeProDoctorantComponent } from './components/donnee-pro-doctorant/donnee-pro-doctorant.component';
+import { DonneeProEnseignantComponent } from './components/donnee-pro-enseignant/donnee-pro-enseignant.component';
+import { ChoosePostuleComponent } from './components/choose-postule/choose-postule.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,13 +43,18 @@ import { SigninComponent } from './components/signin/signin.component';
     ContactComponent,
     SignupComponent,
     SigninComponent,
-    
+    DonneeProDoctorantComponent,
+    DonneeProEnseignantComponent,
+    ChoosePostuleComponent,
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ClarityModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],

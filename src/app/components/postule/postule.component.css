@@ -122,7 +122,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #FF9B22;
+  background: #99A3A4;
 }
 
 ul.CTAs {
@@ -139,7 +139,7 @@ ul.CTAs a {
 
 a.download {
   background: #fff;
-  color: #FF9B22;
+  color: #CCD1D1;
 }
 
 a.article,

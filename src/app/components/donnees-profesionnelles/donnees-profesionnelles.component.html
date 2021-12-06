@@ -1,90 +1,128 @@
-<form>
 
 
-    <div class="top-margin">
+  <div class="top-margin" >
+    <div class="col-sm-6">
+      <label>Vous etes  : </label>
+      <span class="radio">
+        <input type="radio" name="isEnseignant" value = "true" (change)="selected(true)" >Enseignant Chercheur
+      </span>
+      <span class="radio">
+        <input type="radio" (change)="selected(false)" value = "false"  name="isEnseignant">Doctorant
+      </span>
+    </div>
+  </div>
+  <app-donnee-pro-doctorant *ngIf="!isEnseignant"
+
+  ></app-donnee-pro-doctorant>
+  <app-donnee-pro-enseignant *ngIf="isEnseignant"
+
+  ></app-donnee-pro-enseignant>
+
+<!--<form [formGroup]= "demandeurProForm">
+<div formGroupName = "demandeurProInfos">
+  <div class="top-margin" >
+    <div class="col-sm-6">
+      <label>Vous etes  : </label>
+      <span class="radio">
+        <input type="radio" name="isEnseignant" value = "true" (change)="selected(true)" formControlName="isEnseignant">Enseignant Chercheur
+      </span>
+      <span class="radio">
+        <input type="radio" (change)="selected(false)" value = "false" formControlName="isEnseignant" name="isEnseignant">Doctorant
+      </span>
+    </div>
+  </div>
+
+   <div class="top-margin" *ngIf="isEnseignant">
         <div class="col-sm-6">
           <label>Grade : </label>
           <span class="radio">
-            <input type="radio" name="optradio" checked>PES
+            <input type="radio" value="PES" formControlName="grade" name="optradio2" checked>PES
           </span>
           <span class="radio">
-            <input type="radio" name="optradio">PH
+            <input type="radio" value="PH" formControlName="grade" name="optradio2">PH
           </span>
           <span class="radio">
-            <input type="radio" name="optradio">PA
+            <input type="radio" value="PA" formControlName="grade" name="optradio2">PA
           </span>
           <span class="radio">
-            <input type="radio" name="optradio">Autre
+            <input type="radio"  value="Autre" formControlName="grade" name="optradio2">Autre
           </span>
         </div>
-      </div>
-  
-    
-    <div class="top-margin">
+    </div>
+
+
+   <div class="top-margin"   *ngIf="!isEnseignant">
       <div class="col-sm-12">
         <label>Fonctionaire ou salarié: </label>
         <span class="radio-inline">
-          <input type="radio" name="optradio" checked>Oui
+          <input type="radio" value="false" name="optradio3" formControlName="isSalarie" checked>Fonctionaire
         </span>
         <span class="radio-inline">
-          <input type="radio" name="optradio">Non
+          <input type="radio" value="true" formControlName="isSalarie" name="optradio3">Salarié
         </span>
       </div>
     </div>
-    <div class="top-margin">
+    <div class="top-margin"  *ngIf="!isEnseignant">
         <div class="col-sm-12">
           <label>Année Thèse : </label>
           <span class="radio">
-            <input type="radio" name="optradio" checked>Première
+            <input type="radio" value="premiere" formControlName="anneeThese" name="optradio4" checked>Première
           </span>
           <span class="radio">
-            <input type="radio" name="optradio">Deuxième
+            <input type="radio" value="deuxieme" formControlName="anneeThese" name="optradio4">Deuxième
           </span>
           <span class="radio">
-            <input type="radio" name="optradio">Troixième
+            <input type="radio" value="troisieme" formControlName="anneeThese" name="optradio4">Troixième ou plus
           </span>
-          
+
         </div>
       </div>
 
-      <div class="row top-margin">
+      <div class="row top-margin"  *ngIf="!isEnseignant">
         <div class="col-sm-6">
           <label>Directeur de thèse <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="directeurThese">
         </div>
       </div>
       <div class="row top-margin">
         <div class="col-sm-6">
           <label>CED <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="ced">
         </div>
       </div>
       <div class="row top-margin">
         <div class="col-sm-6">
           <label>Etablissement </label>
-          <select class="form-control">
+          <select class="form-control" formControlName="etablissement">
             <option>Choisir un etablissement</option>
-            <option>FSTG</option>
-            <option>FSSM</option>
-            <option>FMPM</option>
+            <option value="FSTS">FSTG</option>
+            <option value="FSSM">FSSM</option>
+            <option value="FMPM">FMPM</option>
           </select>
         </div>
-       
+
       </div>
       <div class="row top-margin">
         <div class="col-sm-6">
           <label>Entite de Recherche<span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="entiteDeRecherche">
         </div>
     </div>
     <div class="row top-margin">
         <div class="col-sm-6">
           <label>Responsable de l'entite de recherche<span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="responsableEntite">
         </div>
       </div>
-     
-  
-   
-   
-  </form>
+
+      <div class="row">
+
+        <div class="col-lg-4 text-right">
+          <button class="btn btn-action" type="submit" (click)= "handelFinish()">Sign in</button>
+        </div>
+      </div>
+
+</div>
+
+
+  </form>-->

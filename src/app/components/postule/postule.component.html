@@ -25,24 +25,33 @@
                 <li class="">
                   <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Informations sur le demandeurs</a>
                   <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['donneeperso'] } }]">Données personnelles</a></li>
-                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['donneepro'] } }]">Données profesionnelles</a></li>
+                    <li><a [routerLink]="['/postule/{{type}}' , { outlets: { forms: ['donneeperso'] } }]">Données personnelles</a></li>
+                    <li><a [routerLink]="['/postule/{{type}}' , { outlets: { forms: ['donneepro'] } }]">Données profesionnelles</a></li>
                   </ul>
                 </li>
                 <li>
+                    <div *ngIf="isMission()">
+                      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Informations sur le stage ou la mission</a>
+                      <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li><a [routerLink]="['/postule/mission' , { outlets: { forms: ['mission-info'] } }]">Informations générale</a></li>
+                        <li><a [routerLink]="['/postule/mission' , { outlets: { forms: ['mission-cadre'] } }]">cadre</a></li>
+                        <li><a [routerLink]="['/postule/mission' , { outlets: { forms: ['soutien'] } }]">Soutien</a></li>
+                      </ul>
+                    </div>
 
-                  <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Informations sur le stage ou la mission</a>
-                  <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['mission-info'] } }]">Informations générale</a></li>
-                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['mission-cadre'] } }]">cadre</a></li>
-                    <li><a [routerLink]="['/postule' , { outlets: { forms: ['soutien'] } }]">Soutien</a></li>
-                  </ul>
+                    <div *ngIf="!isMission()">
+                      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Informations sur la manifestation</a>
+                      <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li><a [routerLink]="['/postule/manifestation' , { outlets: { forms: ['manifestation-info'] } }]">Informations générale</a></li>
+                        <li><a [routerLink]="['/postule/manifestation' , { outlets: { forms: ['soutien'] } }]">Soutien</a></li>
+                      </ul>
+                    </div>
                 </li>
 
               </ul>
 
               <ul class="list-unstyled CTAs">
-                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to the article</a></li>
+                <li><a  [routerLink]= "" type="submit" (click)= "handleFinish()" class="article">Postuler</a></li>
               </ul>
             </nav>
 
@@ -55,7 +64,10 @@
               <h1 class="page-title">Lorem ipsum dolor sit amet, consectetur.</h1>
             </header>
 
-            <router-outlet name="forms"></router-outlet>
+            <router-outlet name="forms"
+
+            ></router-outlet>
+
 
           </article>
           <!-- /Article -->

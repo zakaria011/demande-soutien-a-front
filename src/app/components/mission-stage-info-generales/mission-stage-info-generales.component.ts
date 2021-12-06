@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MissionService } from 'src/app/services/mission.service';
 
 @Component({
   selector: 'app-mission-stage-info-generales',
@@ -7,9 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MissionStageInfoGeneralesComponent implements OnInit {
 
-  constructor() { }
+  missionGeneraleForm! : FormGroup;
+  constructor(private formBuilder : FormBuilder, private missionService : MissionService) {
+     this.missionGeneraleForm = this.formBuilder.group({
+      missionGeneraleInfosForm : this.formBuilder.group({
+          objetMission : ['',Validators.required],
+          pays : ['',Validators.required],
+          ville : ['',Validators.required],
+          dateDebut : ['',Validators.required],
+          dateFin : ['',Validators.required],
+          dateDepart : ['',Validators.required],
+          dateRetour : ['',Validators.required]
+       })
+     });
+
+  }
 
   ngOnInit(): void {
   }
 
-}
+  handleFinish(){
+    const missionGenerale = {
+      ...this.missionGeneraleForm.get("missionGeneraleInfosForm")?.value
+    }
+
+    this.missionService.setMissionGenerale(missionGenerale);
+    console.log(missionGenerale);
+
+  }
+  }
+
+

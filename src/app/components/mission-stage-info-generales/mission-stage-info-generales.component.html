@@ -1,47 +1,59 @@
-<form>
-
+<form [formGroup]="missionGeneraleForm">
+  <div formGroupName="missionGeneraleInfosForm">
     <div class="row top-margin">
       <div class="col-sm-6">
         <label>Objet de la mission ou stage <span class="text-danger">*</span></label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" formControlName="objetMission">
       </div>
     </div>
     <div class="row top-margin">
       <div class="col-sm-6">
         <label>Pays <span class="text-danger">*</span></label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" formControlName="pays">
       </div>
       <div class="col-sm-6">
           <label>Ville<span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="ville">
         </div>
     </div>
     <div class="row top-margin">
        <div class="col-sm-6">
-     
+
           <label>Date debut<span class="text-danger">*</span></label>
-          <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate">
+          <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
+              formControlName="dateDebut"
+          >
         </div>
         <div class="col-sm-6">
         <label>Date Fin<span class="text-danger">*</span></label>
-        <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate">
+        <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
+          formControlName="dateFin"
+        >
         </div>
-</div>
-<div class="row top-margin">
-    <div class="col-sm-6">
-  
-       <label>Date depart<span class="text-danger">*</span></label>
-       <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate">
-     </div>
-     <div class="col-sm-6">
-     <label>Date retour<span class="text-danger">*</span></label>
-     <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate">
-     </div>
-</div>
-  
-   
-      
+  </div>
+  <div class="row top-margin">
+      <div class="col-sm-6">
 
- 
- 
+        <label>Date depart<span class="text-danger">*</span></label>
+        <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
+            formControlName="dateDepart"
+        >
+      </div>
+      <div class="col-sm-6">
+      <label>Date retour<span class="text-danger">*</span></label>
+      <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
+            formControlName="dateRetour"
+      >
+      </div>
+  </div>
+
+  <div class="col-lg-4 text-right">
+    <button class="btn btn-action" type="submit" (click)= "handleFinish()">Valider</button>
+  </div>
+
+
+</div>
+
+
+
 </form>

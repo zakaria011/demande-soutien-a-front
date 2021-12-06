@@ -1,50 +1,53 @@
-<form>
-
+<form [formGroup]="cadreMissionForm">
+  <div formGroupName="cadreMissionInfosForm">
     <div class="row top-margin">
-        <div class="col-sm-6-inline">  
-        <input type="radio" name="group" value="happy" id="rad1">
+        <div class="col-sm-6-inline">
+        <input type="radio" name="group" value="happy" id="rad1" value = "true" formControlName= "isFinance">
         <label type="text" style="margin-left:5px;"> Ce projet de coopération financé, mais le titre de transport ne fait pas partie de l'enveloppe budgétaire allouée </label>
-        
-    </div> 
+
+    </div>
     </div>
     <div class="row top-margin">
-        <div class="col-sm-6-inline">  
-        <input type="radio" name="group" value="happy" id="rad1">
+        <div class="col-sm-6-inline">
+        <input type="radio" name="group" value="happy" id="rad1" value = "false" formControlName= "isFinance">
         <label type="text" style="margin-left:5px;"> Ce n'est pas dans le cadre d'un projet de Recherche financé </label>
-        
-    </div> 
+
+    </div>
     </div>
 
     <div class="row top-margin">
       <div class="col-sm-6">
         <label>Préciser le cadre <span class="text-danger">*</span></label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" formControlName="cadre">
       </div>
     </div>
-    
-   
+
+
       <div class="row top-margin">
         <div class="col-sm-6">
           <label>Intitulé du projet de coopération : <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="intituleProjet">
         </div>
-       
+
       </div>
       <div class="row top-margin">
         <div class="col-sm-6">
           <label>Responsable marocain du projet : <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="responsableMarocain">
         </div>
-        
+
       </div>
       <div class="row top-margin">
         <div class="col-sm-6">
           <label>Partenaire(s) étranger(s) impliqué(s) : <span class="text-danger">*</span></label>
-          <textarea type="text" class="form-control"></textarea>
+          <textarea type="text" class="form-control" formControlName="partenaireEtranger"></textarea>
         </div>
-        
+
       </div>
-    
- 
- 
+      <div class="col-lg-4 text-right">
+        <button class="btn btn-action" type="submit" (click)= "handleFinish()">Valider</button>
+      </div>
+
+
+  </div>
 </form>

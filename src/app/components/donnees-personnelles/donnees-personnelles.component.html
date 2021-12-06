@@ -1,39 +1,45 @@
-<form>
+<form [formGroup]= "demandeurPersoForm">
 
-
+<div formGroupName="demandeurPersoInfos">
   <div class="row top-margin">
     <div class="col-sm-6">
       <label>Nom <span class="text-danger">*</span></label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" formControlName="nom">
     </div>
     <div class="col-sm-6">
       <label>Prénom <span class="text-danger">*</span></label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" formControlName="prenom">
     </div>
   </div>
 
   <div class="row top-margin">
     <div class="col-sm-6">
       <label>Num tel <span class="text-danger">*</span></label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" formControlName="numTel">
     </div>
     <div class="col-sm-6">
       <label>Email <span class="text-danger">*</span></label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" formControlName="email">
     </div>
   </div>
   <div class="row top-margin">
     <div class="col-sm-6">
-        
+
       <label>Fonction au sein de l'établissement </label> </div>
       <div class="col-sm-6">
-      <input  type="radio" class="radio-inline" >
+      <input  type="radio" class="radio-inline" value="true" formControlName="isEnseignant" >
       <label style="margin-left: 10px;">Enseignant Chercheur</label>
-      <input type="radio" class="radio-inline" style="margin-left: 10px;">
+      <input type="radio" class="radio-inline" value="false" style="margin-left: 10px;"  formControlName="isEnseignant">
       <label style="margin-left: 10px;">Doctorant</label>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-4 text-right">
+          <button class="btn btn-action"  type="submit" (click)= "handelFinish()">Sign in</button>
+        </div>
       </div>
   </div>
   <hr>
+</div>
 
-  
 </form>
