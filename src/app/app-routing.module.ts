@@ -14,6 +14,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { ChoosePostuleComponent } from './components/choose-postule/choose-postule.component';
+import { HistoriquesComponent } from './components/historiques/historiques.component';
 
 
 const ROUTES : Routes = [
@@ -21,6 +22,7 @@ const ROUTES : Routes = [
   {path : 'contact', component : ContactComponent},
   {path : 'signup', component : SignupComponent},
   {path : 'signin', component : SigninComponent},
+  {path : 'historiques', component : HistoriquesComponent},
   {path : 'choosepostule', component : ChoosePostuleComponent},
   {path : 'postule/:type', component : PostuleComponent,
   children : [

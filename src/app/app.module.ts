@@ -25,6 +25,7 @@ import { DonneeProDoctorantComponent } from './components/donnee-pro-doctorant/d
 import { DonneeProEnseignantComponent } from './components/donnee-pro-enseignant/donnee-pro-enseignant.component';
 import { ChoosePostuleComponent } from './components/choose-postule/choose-postule.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HistoriquesComponent } from './components/historiques/historiques.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     DonneeProDoctorantComponent,
     DonneeProEnseignantComponent,
     ChoosePostuleComponent,
+    HistoriquesComponent,
 
   ],
   imports: [
