@@ -7,89 +7,40 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-              
-              
+
+
                 <div class="table-wrap">
                     <table class="table table-responsive-xl">
                       <thead>
                         <tr>
-                            <th>Num</th>
-                            <th>Code</th>
-                          <th>Demandeur</th>
+                          <th>Code</th>
+                          <th>Type</th>
+                          <th>Intitulé</th>
                           <th>Etat</th>
                           <th>&nbsp;</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                      
-                                      <span> 1</span>
-                                    </label>
-                            </td>
-                          <td class="d-flex align-items-center">
-            
-                              <div class="pl-3 email">
-                                  <span>523611</span>
-                                  <span>Added: 01/03/2020</span>
-                              </div>
-                          </td>
-                          <td>Maskan Zakaria</td>
-                          <td class="status"><span class="active">Acceptée</span></td>
-                          <td>
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                          </button>
-                        </td>
-                        </tr>
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                      
-                                      <span> 2</span>
-                                    </label>
-                            </td>
-                          <td class="d-flex align-items-center">
-            
-                              <div class="pl-3 email">
-                                  <span>523611</span>
-                                  <span>Added: 01/03/2020</span>
-                              </div>
-                          </td>
-                          <td>Maskan Zakaria</td>
-                          <td class="status"><span class="active">Acceptée</span></td>
-                          <td>
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                          </button>
-                        </td>
-                        </tr>
-                        <tr class="alert" role="alert">
-                            <td>
-                                <label class="checkbox-wrap checkbox-primary">
-                                      
-                                      <span >3</span>
-                                    </label>
-                            </td>
+                        <tr class="alert" role="alert" *ngFor="let demande of userDemandes">
+
                           <td class="d-flex align-items-center">
 
                               <div class="pl-3 email">
-                                  <span>41236</span>
-                                  <span>Added: 01/03/2020</span>
+                                  <span>523611</span>
+                                  <span>Added: {{demande.created_at}}</span>
                               </div>
                           </td>
-                          <td>Maskan Zakaria</td>
-                          <td class="status"><span class="waiting">En cours</span></td>
+                          <td>{{demande.is_mission ? "Manifestation" : "Mission"}}</td>
+                          <td>{{demande.intitule}}</td>
+                          <td class="status"><span class="active">{{demande.libelle}}</span></td>
                           <td>
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                          </button>
-                        </td>
+                                  <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                              </button>
+                          </td>
                         </tr>
-                        
-                       
-                      
+
+
                       </tbody>
                     </table>
                 </div>

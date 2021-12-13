@@ -15,6 +15,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { ChoosePostuleComponent } from './components/choose-postule/choose-postule.component';
 import { HistoriquesComponent } from './components/historiques/historiques.component';
+import { DemandeComponent } from './child-modules/demande/demande.component';
+import { AuthGuard } from './auth.guard';
 
 
 const ROUTES : Routes = [
@@ -24,7 +26,8 @@ const ROUTES : Routes = [
   {path : 'signin', component : SigninComponent},
   {path : 'historiques', component : HistoriquesComponent},
   {path : 'choosepostule', component : ChoosePostuleComponent},
-  {path : 'postule/:type', component : PostuleComponent,
+  {path : 'demandes', component : DemandeComponent},
+  {path : 'postule/:type', component : PostuleComponent, canActivate : [AuthGuard],
   children : [
   {path : 'donneeperso', component : DonneesPersonnellesComponent, outlet: 'forms'},
 

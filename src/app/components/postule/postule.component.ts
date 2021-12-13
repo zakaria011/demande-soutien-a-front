@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Emitters } from 'src/app/emitters/emitters';
 import { DemandeurServiceService } from 'src/app/services/demandeur-service.service';
 import { ManifestationService } from 'src/app/services/manifestation.service';
 import { MissionService } from 'src/app/services/mission.service';
@@ -23,8 +24,17 @@ export class PostuleComponent implements OnInit {
 
   isMission(): boolean {
     let type = this.route.snapshot.params.type;
-    if(type=="mission") return true;
-    return false;
+
+    if(type=="mission")
+    {
+      Emitters.typeEmitter.emit("mission");
+      return true;
+    }
+    else{
+      Emitters.typeEmitter.emit("manifestation");
+      return false;
+    }
+
   }
 
   handleFinish(){

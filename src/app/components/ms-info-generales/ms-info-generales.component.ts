@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Response } from 'src/app/models/response.model';
 import { ManifestationService } from 'src/app/services/manifestation.service';
 
 @Component({
@@ -34,6 +35,8 @@ export class MsInfoGeneralesComponent implements OnInit {
         ...this.manifestationForm.get('manifestationInfosForm')?.value
       }
       this.manifestationService.setManifestation(manifestation);
+
+
       console.log(manifestation);
   }
 

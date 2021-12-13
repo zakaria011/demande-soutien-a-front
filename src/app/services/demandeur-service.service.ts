@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { DemandeurPerso } from '../models/demandeur-perso.model';
 import { DemandeurPro } from '../models/demandeur-pro.model';
+import { Response } from '../models/response.model';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +12,17 @@ import { DemandeurPro } from '../models/demandeur-pro.model';
 export class DemandeurServiceService {
   private demandeurPerso! : DemandeurPerso;
   private demandeurPro! : DemandeurPro;
+  private demandeurId! :number;
+  private baseUrl = 'http://127.0.0.1:8000/api/';
   private baseUrlDemandeur = "http://127.0.0.1:8000/api/demandeurs";
-  constructor(private httpCLient : HttpClient) { }
+  constructor(private httpCLient : HttpClient, private authService : AuthService) { }
 
+  getDemandeurId(){
+    return this.demandeurId;
+  }
+  setDemandeurId(demandeurId : number){
+    return this.demandeurId = demandeurId;
+  }
   setDemandeurPerso(demandeurPerso : DemandeurPerso){
     this.demandeurPerso = demandeurPerso;
   }
@@ -37,6 +47,7 @@ export class DemandeurServiceService {
     params.append('entite_de_recherche',this.getDemandeurPro().entiteDeRecherche);
     params.append('is_professeur',`${this.getDemandeurPro().isEnseignant}`);
     params.append('etablissement',this.getDemandeurPro().etablissement);
+    params.append('user_id',`${this.authService.getIdUser()}`);
 
     if(!this.getDemandeurPro().isEnseignant){
 
@@ -52,5 +63,9 @@ export class DemandeurServiceService {
 
 
     return this.httpCLient.post<Response>(this.baseUrlDemandeur,params);
+  }
+
+  findByUser(id :any){
+    return this.httpCLient.get<Response>(this.baseUrl+'demandeur/findByUser/'+id);
   }
 }

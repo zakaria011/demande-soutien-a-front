@@ -26,6 +26,8 @@ import { DonneeProEnseignantComponent } from './components/donnee-pro-enseignant
 import { ChoosePostuleComponent } from './components/choose-postule/choose-postule.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HistoriquesComponent } from './components/historiques/historiques.component';
+import { DemandesComponent } from './components/demandes/demandes.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -48,6 +50,7 @@ import { HistoriquesComponent } from './components/historiques/historiques.compo
     DonneeProEnseignantComponent,
     ChoosePostuleComponent,
     HistoriquesComponent,
+    DemandesComponent
 
   ],
   imports: [
@@ -59,7 +62,7 @@ import { HistoriquesComponent } from './components/historiques/historiques.compo
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [ CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

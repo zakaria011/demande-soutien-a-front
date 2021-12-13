@@ -1,5 +1,7 @@
 
-
+<header class="page-header">
+  <h1 class="page-title">Données profesionnelles</h1>
+</header>
   <div class="top-margin" >
     <div class="col-sm-6">
       <label>Vous etes  : </label>
@@ -11,12 +13,11 @@
       </span>
     </div>
   </div>
-  <app-donnee-pro-doctorant *ngIf="!isEnseignant"
+  <app-donnee-pro-doctorant *ngIf="!isEnseignant">
+  </app-donnee-pro-doctorant>
+  <app-donnee-pro-enseignant *ngIf="isEnseignant">
 
-  ></app-donnee-pro-doctorant>
-  <app-donnee-pro-enseignant *ngIf="isEnseignant"
-
-  ></app-donnee-pro-enseignant>
+  </app-donnee-pro-enseignant>
 
 <!--<form [formGroup]= "demandeurProForm">
 <div formGroupName = "demandeurProInfos">

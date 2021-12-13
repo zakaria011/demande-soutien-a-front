@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DemandeurPro } from 'src/app/models/demandeur-pro.model';
+import { Response } from 'src/app/models/response.model';
 import { DemandeurServiceService } from 'src/app/services/demandeur-service.service';
 
 @Component({
@@ -38,9 +39,10 @@ export class DonneeProDoctorantComponent implements OnInit {
     this.demandeurService.setDemandeurPro(demandeurPro);
     this.demandeurService.addDemandeur().subscribe(
 
-      (response) => {
-        if(response.status == 200)
-          console.log(response);
+      (response : Response) => {
+        if(response.status==200)
+          console.log(response.result);
+          this.demandeurService.setDemandeurId(response.result.id);
       },
       (err) => {
         console.log(err);

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Emitters } from 'src/app/emitters/emitters';
+import { Response } from 'src/app/models/response.model';
+import { DemandeurServiceService } from 'src/app/services/demandeur-service.service';
+import { ManifestationService } from 'src/app/services/manifestation.service';
 import { MissionService } from 'src/app/services/mission.service';
 
 @Component({
@@ -9,22 +14,34 @@ import { MissionService } from 'src/app/services/mission.service';
 })
 export class SoutienComponent implements OnInit {
   soutienForm! : FormGroup;
-  constructor(private formBuilder : FormBuilder, private missionService : MissionService) {
+  type! : string;
+  constructor(private formBuilder : FormBuilder, private missionService : MissionService,
+    private route : ActivatedRoute,  private demandeurService : DemandeurServiceService,
+        private missonService : MissionService, private manifestationService : ManifestationService
+    ) {
       this.soutienForm = this.formBuilder.group({
         soutienInfosForm : this.formBuilder.group({
           isBeneficie : ['',Validators.required],
           montant : ['',Validators.required],
           isSoutienTotal : ['',Validators.required],
-          montantTransport : ['',Validators.required],
-          montantInscription : ['',Validators.required],
-          montantHeberegement : ['',Validators.required],
-          autreMontant : ['',Validators.required]
+          montantTransport : [0,Validators.required],
+          montantInscription : [0,Validators.required],
+          montantHeberegement : [0,Validators.required],
+          autreMontant : [0,Validators.required]
         })
       });
 
   }
 
   ngOnInit(): void {
+    Emitters.typeEmitter.subscribe(
+      (val : string) => {
+        this.type = val;
+      },
+      (err) => {
+        console.log(err);
+      }
+    )
   }
 
   handleFinish(): void {
@@ -32,7 +49,44 @@ export class SoutienComponent implements OnInit {
       ...this.soutienForm.get('soutienInfosForm')?.value
     }
 
-    this.missionService.setSoutien(soutien);
+
+
+    console.log(this.type);
+    console.log("wwww");
+    if(this.type=="mission") {
+      this.missionService.setSoutien(soutien);
+      this.missionService.addMission().subscribe(
+        (response :Response)=>{
+          if(response.status == 200){
+
+          }
+        },
+        () => {
+
+        },
+
+        ()=>{
+          console.log("...")
+        }
+      );
+    }else {
+      this.manifestationService.setSoutien(soutien);
+      this.manifestationService.addManifestation().subscribe(
+        (response :Response)=>{
+          if(response.status == 200){
+            console.log(response.result);
+          }
+        },
+        (err) => {
+          console.log(err);
+        },
+
+        ()=>{
+          console.log("...");
+        }
+      );
+    }
+
     console.log(soutien);
   }
 
