@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DemandeurPro } from 'src/app/models/demandeur-pro.model';
 import { Response } from 'src/app/models/response.model';
 import { DemandeurServiceService } from 'src/app/services/demandeur-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-donnee-pro-doctorant',
@@ -52,6 +53,8 @@ export class DonneeProDoctorantComponent implements OnInit {
       }
     )
     console.log(demandeurPro);
+    Swal.fire('validation','Valider avec succès ! Passez à la prochaine étape','success')
+
 
   }
 }

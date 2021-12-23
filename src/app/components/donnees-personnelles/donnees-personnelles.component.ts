@@ -1,9 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { anyOrAllPropertiesPass } from '@cds/core/internal';
 import { DemandeurPerso } from 'src/app/models/demandeur-perso.model';
 import { DemandeurServiceService } from 'src/app/services/demandeur-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-donnees-personnelles',
@@ -65,6 +65,8 @@ export class DonneesPersonnellesComponent implements OnInit {
 
     this.demandeurService.setDemandeurPerso(demandeurPerso);
     console.log(demandeurPerso);
+    //Swal.fire()
+    Swal.fire('validation','Valider avec succès ! Passez à la prochaine étape','success')
     //this.router.navigate(['']);
     //this.finish.emit({demandeurPerso : demandeurPerso});
   }

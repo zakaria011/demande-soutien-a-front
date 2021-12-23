@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Response } from 'src/app/models/response.model';
 import { MissionService } from 'src/app/services/mission.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-mission-stage-info-generales',
@@ -37,6 +38,8 @@ export class MissionStageInfoGeneralesComponent implements OnInit {
     this.missionService.setMissionGenerale(missionGenerale);
 
     console.log(missionGenerale);
+    Swal.fire('validation','Valider avec succès ! Passez à la prochaine étape','success')
+
 
   }
   }

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Emitters } from 'src/app/emitters/emitters';
 import { Response } from 'src/app/models/response.model';
 import { DemandeurServiceService } from 'src/app/services/demandeur-service.service';
 import { ManifestationService } from 'src/app/services/manifestation.service';
 import { MissionService } from 'src/app/services/mission.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-soutien',
@@ -17,7 +18,8 @@ export class SoutienComponent implements OnInit {
   type! : string;
   constructor(private formBuilder : FormBuilder, private missionService : MissionService,
     private route : ActivatedRoute,  private demandeurService : DemandeurServiceService,
-        private missonService : MissionService, private manifestationService : ManifestationService
+        private missonService : MissionService, private manifestationService : ManifestationService,
+        private router : Router
     ) {
       this.soutienForm = this.formBuilder.group({
         soutienInfosForm : this.formBuilder.group({
@@ -58,7 +60,9 @@ export class SoutienComponent implements OnInit {
       this.missionService.addMission().subscribe(
         (response :Response)=>{
           if(response.status == 200){
-
+            console.log(response.result);
+            Swal.fire('validation','Valider avec succès ! Votre demande sera traiter le plus tot possible','success');
+            this.router.navigate(['/historiques'])
           }
         },
         () => {
@@ -75,6 +79,8 @@ export class SoutienComponent implements OnInit {
         (response :Response)=>{
           if(response.status == 200){
             console.log(response.result);
+            Swal.fire('validation','Valider avec succès ! Votre demande sera traiter le plus tot possible','success');
+            this.router.navigate(['/historiques'])
           }
         },
         (err) => {
@@ -88,6 +94,8 @@ export class SoutienComponent implements OnInit {
     }
 
     console.log(soutien);
+
+
   }
 
 }

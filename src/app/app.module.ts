@@ -59,7 +59,8 @@ import { CookieService } from 'ngx-cookie-service';
     ClarityModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
 
   ],
   providers: [ CookieService],

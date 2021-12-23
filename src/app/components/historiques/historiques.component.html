@@ -17,7 +17,8 @@
                           <th>Type</th>
                           <th>Intitulé</th>
                           <th>Etat</th>
-                          <th>&nbsp;</th>
+                          <th>Déposer votre rapport</th>
+
                         </tr>
                       </thead>
                       <tbody>
@@ -30,13 +31,11 @@
                                   <span>Added: {{demande.created_at}}</span>
                               </div>
                           </td>
-                          <td>{{demande.is_mission ? "Manifestation" : "Mission"}}</td>
+                          <td>{{demande.is_mission ?  "Mission":"Manifestation" }}</td>
                           <td>{{demande.intitule}}</td>
                           <td class="status"><span class="active">{{demande.libelle}}</span></td>
                           <td>
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                  <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                              </button>
+                              <input type="file" name="upload" accept="application/pdf">
                           </td>
                         </tr>
 

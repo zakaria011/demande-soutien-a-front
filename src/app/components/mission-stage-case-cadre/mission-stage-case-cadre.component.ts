@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cadre } from 'src/app/models/cadre.model';
 import { MissionService } from 'src/app/services/mission.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-mission-stage-case-cadre',
@@ -36,6 +37,8 @@ export class MissionStageCaseCadreComponent implements OnInit {
 
     this.missionService.setCadre(cadre);
     console.log(cadre);
+    Swal.fire('validation','Valider avec succès ! Passez à la prochaine étape','success')
+
 
   }
 

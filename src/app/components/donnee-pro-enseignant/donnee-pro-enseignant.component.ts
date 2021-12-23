@@ -5,6 +5,7 @@ import { Response } from 'src/app/models/response.model';
 import { DemandeurServiceService } from 'src/app/services/demandeur-service.service';
 import { ManifestationService } from 'src/app/services/manifestation.service';
 import { MissionService } from 'src/app/services/mission.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-donnee-pro-enseignant',
@@ -54,6 +55,7 @@ export class DonneeProEnseignantComponent implements OnInit {
       }
     )
     console.log(demandeurPro);
+    Swal.fire('validation','Valider avec succès ! Passez à la prochaine étape','success')
 
   }
 
