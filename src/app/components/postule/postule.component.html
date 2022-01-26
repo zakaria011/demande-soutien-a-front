@@ -47,6 +47,12 @@
                       </ul>
                     </div>
                 </li>
+                <li class="">
+                  <a href="#pcj" data-toggle="collapse" aria-expanded="false">Piéces jointes</a>
+                  <ul class="collapse list-unstyled" id="pcj">
+                    <li><a [routerLink]="['/postule/{{type}}' , { outlets: { forms: ['piecesjointes'] } }]">Ajouter vos documents</a></li>
+                  </ul>
+                </li>
 
               </ul>
 

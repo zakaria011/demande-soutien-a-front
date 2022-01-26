@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HistoriquesComponent } from './components/historiques/historiques.component';
 import { DemandesComponent } from './components/demandes/demandes.component';
 import { CookieService } from 'ngx-cookie-service';
+import { PiecesJointesComponent } from './components/pieces-jointes/pieces-jointes.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { CookieService } from 'ngx-cookie-service';
     DonneeProEnseignantComponent,
     ChoosePostuleComponent,
     HistoriquesComponent,
-    DemandesComponent
+    DemandesComponent,
+    PiecesJointesComponent
 
   ],
   imports: [

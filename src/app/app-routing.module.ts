@@ -17,6 +17,7 @@ import { ChoosePostuleComponent } from './components/choose-postule/choose-postu
 import { HistoriquesComponent } from './components/historiques/historiques.component';
 import { DemandeComponent } from './child-modules/demande/demande.component';
 import { AuthGuard } from './auth.guard';
+import { PiecesJointesComponent } from './components/pieces-jointes/pieces-jointes.component';
 
 
 const ROUTES : Routes = [
@@ -37,7 +38,8 @@ const ROUTES : Routes = [
   {path : 'mission-cadre', component : MissionStageCaseCadreComponent ,outlet: 'forms'},
   {path : 'mission-info', component : MissionStageInfoGeneralesComponent ,outlet: 'forms'},
   {path : 'manifestation-info', component : MsInfoGeneralesComponent ,outlet: 'forms'},
-  {path : 'soutien', component : SoutienComponent,outlet: 'forms'}
+  {path : 'soutien', component : SoutienComponent,outlet: 'forms'},
+  {path : 'piecesjointes', component : PiecesJointesComponent,outlet: 'forms'}
   ]},
   { path: 'postulemodule', loadChildren: () => import('./child-modules/postulemodule/postulemodule.module').then(m => m.PostulemoduleModule) }
 
